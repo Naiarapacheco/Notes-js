@@ -9,7 +9,12 @@ function showNotes() {
   cleanNotes();
 
   getNotes().forEach((note) => {
-    const noteElement = createNote(note.id, note.content, note.fixed, note.urgent);
+    const noteElement = createNote(
+      note.id,
+      note.content,
+      note.fixed,
+      note.urgent
+    );
 
     notesContainer.appendChild(noteElement);
   });
@@ -40,7 +45,7 @@ function addNote() {
 }
 
 function generateId() {
-  return Math.floor(Math.random() * 5000); 
+  return Math.floor(Math.random() * 5000);
 }
 
 function createNote(id, content, fixed = false, urgent = false) {
@@ -96,9 +101,11 @@ function createNote(id, content, fixed = false, urgent = false) {
   });
 
   //Urgência
-  element.querySelector(".ri-file-warning-fill").addEventListener("click", () => {
-    toggleImportantNote(id);
-  })
+  element
+    .querySelector(".ri-file-warning-fill")
+    .addEventListener("click", () => {
+      toggleImportantNote(id, element);
+    });
 
   return element;
 }
@@ -152,7 +159,12 @@ function copyNote(id) {
     fixed: targetNotes.fixed,
     urgent: targetNotes.urgent,
   };
-  const noteElement = createNote(noteObj.id, noteObj.content, noteObj.fixed, noteObj.urgent);
+  const noteElement = createNote(
+    noteObj.id,
+    noteObj.content,
+    noteObj.fixed,
+    noteObj.urgent
+  );
 
   notesContainer.appendChild(noteElement);
 
@@ -175,9 +187,9 @@ function saveNotes(notes) {
 }
 
 // Função para exportar notas como CSV
-function exportNotesToCSV(){
+function exportNotesToCSV() {
   const notes = getNotes();
-  if (notes.length === 0){
+  if (notes.length === 0) {
     alert("Não há notas para exportar.");
     return;
   }
@@ -185,12 +197,12 @@ function exportNotesToCSV(){
   let csvContent = "data:text/csv;charset=utf-8,";
   csvContent += "ID,Content,Urgent\n"; //cabeçalho
 
-  notes.forEach(note => {
+  notes.forEach((note) => {
     const row = [
-      note.id, 
-      note.content.replace(/\n/g, " "), 
-      note.fixed, 
-      note.urgent
+      note.id,
+      note.content.replace(/\n/g, " "),
+      note.fixed,
+      note.urgent,
     ].join(",");
     csvContent += row + "\n";
   });
@@ -202,7 +214,7 @@ function exportNotesToCSV(){
   document.body.appendChild(link); // Requerido para o firefox
   link.click();
   document.body.removeChild(link); // Remover o link após o clique
-};
+}
 
 // Eventos
 addNoteBtn.addEventListener("click", () => addNote());
