@@ -10,8 +10,8 @@ As notas são salvas no localStorage, garantindo que suas anotações permaneça
     <li>Adicionar novas notas</li>
     <li>Editar notas existentes</li>
     <li>Deletar notas</li>
-    <li>Marcar notas como importante(fixar no topo)</li>
-    <li>Marcar notas como urgentes (destacar com fundo verde)</li>
+    <li>Marcar notas como importante (fixado no topo)</li>
+    <li>Marcar notas como urgentes (destacado com fundo verde)</li>
     <li>Salvar as notas no localStorage</li>
     <li>Exportar as notas em formato CSV</li>
 </ul>
