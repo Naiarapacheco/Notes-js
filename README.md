@@ -10,8 +10,8 @@ As notas são salvas no localStorage, garantindo que suas anotações permaneça
     <li>Adicionar novas notas</li>
     <li>Editar notas existentes</li>
     <li>Deletar notas</li>
-    <li>Marcar notas como importannte(fixar no topo)</li>
-    <li>Marcar notas como urgentes (destacar com fundo vermelho/verde)</li>
+    <li>Marcar notas como importante (fixado no topo)</li>
+    <li>Marcar notas como urgentes (destacado com fundo verde)</li>
     <li>Salvar as notas no localStorage</li>
     <li>Exportar as notas em formato CSV</li>
 </ul>
@@ -55,7 +55,7 @@ As notas são salvas no localStorage, garantindo que suas anotações permaneça
 <p>5. Marcar uma nota como Urgente:</p>
 
 <ul>
-    <li>Clique no ícone de alerta na nota para destacá-la com um fundo vermelho/verde.</li>
+    <li>Clique no ícone de alerta na nota para destacá-la com um fundo verde.</li>
 </ul>
 
 <p>6. Exportar nota para CSV:</p>
